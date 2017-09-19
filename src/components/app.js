@@ -1,31 +1,30 @@
 import { h, Component } from 'preact';
-import { Router } from 'preact-router';
+import SearchBar from './search-bar';
 
-import Header from './header';
-import Home from '../routes/home';
-import Profile from '../routes/profile';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
 export default class App extends Component {
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
-	handleRoute = e => {
-		this.currentUrl = e.url;
-	};
 
-	render() {
-		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
-			</div>
-		);
-	}
+  updateState(data) {
+    this.setState(data);
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      query: ''
+    };
+  }
+
+  render() {
+    return (
+      <div id="app">
+        <h1>GitStats</h1>
+        <SearchBar updateState={this.updateState.bind(this)} query={this.props.query} />
+        <h1>Hiya</h1>
+      </div>
+    );
+  }
 }

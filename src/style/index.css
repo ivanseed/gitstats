@@ -18,3 +18,39 @@ html, body {
 #app {
 	height: 100%;
 }
+
+h1 {
+	text-align: center;
+}
+
+.search-container {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+	background-color: #efefef;
+  background-image: url('/assets/icons/search-icon.svg');
+	background-size: auto 80%;
+  background-repeat: no-repeat;
+	background-position: right center;
+  outline: none;
+	width: 90vw;
+	max-width: 700px;
+	height: 8vh;
+	min-height: 50px;
+  font-size: 5vh;
+	border: 0px;
+	padding: 0 20px 0 20px;
+	color: #3d3d3d;
+	border-radius: 5px;
+}
+
+.search-bar:focus {
+	background-image: none;
+}
+
+.search-bar::placeholder {
+	color: #b5b5b5;
+}
