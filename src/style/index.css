@@ -88,7 +88,7 @@ h1 {
 input[type="radio"]:checked+label {
 	cursor: initial;
 	box-shadow: 0 0 22px #aaa;
-	background-color: #4fad7c;
+	background-color: #7dcc70;
 	transition: all 0.7s ease;
 }
 
@@ -96,8 +96,8 @@ input[type="radio"]:checked+label {
 	background-image: url('/assets/icons/star.svg');
 }
 
-.order-watchers {
-	background-image: url('/assets/icons/eye.svg');
+.order-updated {
+	background-image: url('/assets/icons/updated.svg');
 }
 
 .order-forks {
