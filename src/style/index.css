@@ -88,7 +88,7 @@ h1 {
 input[type="radio"]:checked+label {
 	cursor: initial;
 	box-shadow: 0 0 22px #aaa;
-	background-color: #7dcc70;
+	background-color: #14b866;
 	transition: all 0.7s ease;
 }
 

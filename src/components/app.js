@@ -1,10 +1,23 @@
 import { h, Component } from 'preact';
 import SearchBar from './search-bar';
+import axios from 'axios';
+import NProgress from 'nprogress';
+import '../style/nprogress.css';
 
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
 export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      query: '',
+      order: 'stars',
+      items: []
+    };
+  }
 
   updateState(data) {
     this.setState(data);
@@ -12,6 +25,21 @@ export default class App extends Component {
   }
 
   searchGitHub() {
+    NProgress.start();
+    axios.get(this.buildUrl())
+      .then((response) => {
+        NProgress.done();
+        this.setState({
+          'items': response.data.items
+        });
+      })
+      .catch((err) => {
+        NProgress.done();
+        console.log('gota error');
+      });
+  }
+
+  buildUrl() {
     let filter;
 
     if (this.state.order === 'updated') {
@@ -25,16 +53,7 @@ export default class App extends Component {
       filter = `${this.state.order}:&gt;=0`;
     }
 
-    console.log(`https://api.github.com/search/repositories?q=${this.state.query}+${filter}&sort=${this.state.order}`);
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      query: '',
-      order: 'stars'
-    };
+    return `https://api.github.com/search/repositories?q=${this.state.query}+${filter}&sort=${this.state.order}`;
   }
 
   render() {
