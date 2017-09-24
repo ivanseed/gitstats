@@ -27,12 +27,12 @@ export default class SearchBar extends Component {
             <label className="order-stars" htmlFor="stars"></label>
           </div>
           <div className="search-order">
-            <input id="updated" type="radio" name="order" value="updated" checked={order == 'updated'} onChange={event => this.onSortChange(event.target.id)} />
-            <label className="order-updated" htmlFor="updated"></label>
-          </div>
-          <div className="search-order">
             <input id="forks" type="radio" name="order" value="forks" checked={order == 'forks'} onChange={event => this.onSortChange(event.target.id)} />
             <label className="order-forks" htmlFor="forks" alt="Forks"></label>
+          </div>
+          <div className="search-order">
+            <input id="updated" type="radio" name="order" value="updated" checked={order == 'updated'} onChange={event => this.onSortChange(event.target.id)} />
+            <label className="order-updated" htmlFor="updated"></label>
           </div>
         </form>
       </div>

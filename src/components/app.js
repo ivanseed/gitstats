@@ -1,12 +1,8 @@
 import { h, Component } from 'preact';
 import axios from 'axios';
-import NProgress from 'nprogress';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import '../style/nprogress.css';
-
-// import Home from 'async!./home';
-// import Profile from 'async!./profile';
 
 export default class App extends Component {
 
@@ -30,11 +26,8 @@ export default class App extends Component {
   }
 
   searchGitHub() {
-    NProgress.start();
-    console.log(this.buildUrl());
     axios.get(this.buildUrl())
       .then((response) => {
-        NProgress.done();
         this.setState({
           'items': response.data.items
         });
