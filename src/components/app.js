@@ -1,7 +1,8 @@
 import { h, Component } from 'preact';
-import SearchBar from './search-bar';
 import axios from 'axios';
 import NProgress from 'nprogress';
+import SearchBar from './search-bar';
+import RepositoryList from './repository-list';
 import '../style/nprogress.css';
 
 // import Home from 'async!./home';
@@ -24,8 +25,13 @@ export default class App extends Component {
     this.searchGitHub();
   }
 
+  componentWillMount() {
+    this.searchGitHub();
+  }
+
   searchGitHub() {
     NProgress.start();
+    console.log(this.buildUrl());
     axios.get(this.buildUrl())
       .then((response) => {
         NProgress.done();
@@ -48,22 +54,27 @@ export default class App extends Component {
 
       let dateString = dateFilter.toISOString().substring(0, 10);
 
-      filter = `pushed:&gt;=${dateString}`;
+      filter = `pushed:>=${dateString}`;
     } else {
-      filter = `${this.state.order}:&gt;=0`;
+      filter = `${this.state.order}:>=1`;
     }
 
     return `https://api.github.com/search/repositories?q=${this.state.query}+${filter}&sort=${this.state.order}`;
   }
 
-  render() {
+  render(props, state) {
     return (
       <div id="app">
-        <h1>GitStats</h1>
+        <div className="title">
+          <span>Git<b>Stats</b></span>
+        </div>
         <SearchBar
           updateState={this.updateState.bind(this)}
-          query={this.state.query}
-          order={this.state.order}
+          query={state.query}
+          order={state.order}
+        />
+        <RepositoryList
+          items={state.items}
         />
       </div>
     );
