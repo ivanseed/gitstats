@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "date-fns": "^1.28.5",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0"
   }

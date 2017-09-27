@@ -1,6 +1,7 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "short_name": "GitStats",
+  "name": "GitStats - Checkout the latest popular repositories!",
+  "description": "Check out the latest popular repositories by your favourite language and sort by the most stars and forks",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import axios from 'axios';
+import NProgress from '../lib/nprogress.js';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import '../style/nprogress.css';
@@ -26,14 +27,15 @@ export default class App extends Component {
   }
 
   searchGitHub() {
+    NProgress.start();
     axios.get(this.buildUrl())
       .then((response) => {
+        NProgress.done();
         this.setState({
           'items': response.data.items
         });
       })
       .catch((err) => {
-        NProgress.done();
         console.log('gota error');
       });
   }
