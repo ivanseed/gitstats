@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import Repository from './Repository';
+import Repository from './repository';
 
 const repositoryList = ({items}) => (
   <div className="repositories">
