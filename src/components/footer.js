@@ -14,12 +14,12 @@ export default class Footer extends Component {
 
   fetchContributers() {
     axios.get('https://api.github.com/repos/ivanseed/gitstats/contributors')
-    .then(response => {
-      this.setState({ contributors: response.data })
-    })
-    .catch(err => {
-      console.log('gota error :(')
-    })
+      .then(response => {
+        this.setState({ contributors: response.data })
+      })
+      .catch(err => {
+        console.log('gota error :(')
+      })
   }
 
   componentWillMount() {
@@ -35,18 +35,18 @@ export default class Footer extends Component {
           <li>
             <span>Special thanks to all contributors that made this project possible!</span>
             <span>
-            {
-              state.contributors.map((contributor, i) => (
-                <b className="contributor">
-                  <a href={`https://github.com/${contributor.login}`}>{contributor.login}</a>
-                  { i + 1 === state.contributors.length ? '' : ', ' /* don't render comma on final name */ }
-                </b>
-              ))
-            }
+              {
+                state.contributors.map((contributor, i) => (
+                  <b className="contributor">
+                    <a href={`https://github.com/${contributor.login}`}>{contributor.login}</a>
+                    { i + 1 === state.contributors.length ? '' : ', ' /* don't render comma on final name */ }
+                  </b>
+                ))
+              }
             </span>
           </li>
         </ul>
-    </div>
+      </div>
     );
   }
 }
