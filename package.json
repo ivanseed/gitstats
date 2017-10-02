@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "eslintConfig": {
     "extends": "eslint-config-synacor"
   },
