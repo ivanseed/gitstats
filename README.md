@@ -1,6 +1,8 @@
 # GitStats
 A simple PreactJS app that uses the GitHub search API to display repositories in a list.
 
+[![Build Status](https://travis-ci.org/ivanseed/gitstats.svg?branch=master)](https://travis-ci.org/ivanseed/gitstats) [![Code Climate](https://codeclimate.com/github/ivanseed/gitstats/badges/gpa.svg)](https://codeclimate.com/github/ivanseed/gitstats)
+
 ## Running
 `npm install` then `npm run start`
 
