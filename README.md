@@ -1,7 +1,15 @@
 # GitStats
-A simple PreactJS app that uses the GitHub search API to display repositories in a list.
 
-## Running
+## Introduction
+A simple PreactJS app that uses the GitHub search API to display repositories in a list. Details like such as the number of forks, number of stars
+and a short description of each repository are shown. 
+
+The repositories can be sorted in ascending/descending order based on number of stars or forks or the last updated time.
+
+
+
+## Setup for Development
+
 `npm install` then `npm run start`
 
 ## Deploying
