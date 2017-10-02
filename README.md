@@ -3,7 +3,7 @@
 ## Introduction
 A simple PreactJS app that uses the GitHub search API to display repositories in a list. 
 
-![alt text](https://github.com/PriyankaGitHub7/gitstats/blob/update-readme/src/assets/GitStatsView.png)
+![alt text](https://github.com/ivanseed/gitstats/blob/update-readme/src/assets/GitStatsView.png)
 
 ## Features
 
