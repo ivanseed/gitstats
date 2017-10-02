@@ -15,6 +15,8 @@ export default class App extends Component {
       order: 'stars',
       items: []
     };
+    
+    this.updateState = this.updateState.bind(this);
   }
 
   updateState(data) {
@@ -64,7 +66,7 @@ export default class App extends Component {
           <span>Git<b>Stats</b></span>
         </div>
         <SearchBar
-          updateState={this.updateState.bind(this)}
+          updateState={this.updateState}
           query={state.query}
           order={state.order}
         />
