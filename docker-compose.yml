@@ -4,5 +4,7 @@ services:
   web:
     container_name: gitstats
     build: .
+    volumes:
+      - './src/:/app/src'
     ports:
     - "8080:8080"

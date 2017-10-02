@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package.json /app
 
-RUN npm install
+RUN npm install --quiet
 
 COPY src/ /app/src/
 
 EXPOSE 8080
 
-ENTRYPOINT ["npm", "run", "start"]
+CMD ["npm", "run", "start"]
