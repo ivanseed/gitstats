@@ -15,12 +15,11 @@ export default class Footer extends Component {
   fetchContributers() {
     axios.get('https://api.github.com/repos/ivanseed/gitstats/contributors')
     .then(response => {
-        console.log(1)
-        this.setState({ contributors: response.data })
-      })
-      .catch(err => {
-        console.log('gota error :(')
-      })
+      this.setState({ contributors: response.data })
+    })
+    .catch(err => {
+      console.log('gota error :(')
+    })
   }
 
   componentWillMount() {
