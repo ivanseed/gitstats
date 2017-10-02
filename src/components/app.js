@@ -72,14 +72,14 @@ export default class App extends Component {
           items={state.items}
         />
         <div className="footer">
-           <ul>
-             <li id="footer-title"><a href="https://github.com/ivanseed/gitstats"><span>Git<b>Stats</b></span></a></li>
-             <li>
-               <span>Special thanks to all contributors that made this project possible!</span>
-               <span><b><a href="https://github.com/ivanseed">ivanseed</a></b>, <b><a href="https://github.com/haroon-sheikh">haroon-sheikh</a></b>, <b><a href="https://github.com/athyk">athyk</a></b></span>
-             </li>
-           </ul>
-         </div>
+          <ul>
+            <li id="footer-title"><a href="https://github.com/ivanseed/gitstats"><span>Git<b>Stats</b></span></a></li>
+            <li>
+              <span>Special thanks to all contributors that made this project possible!</span>
+              <span><b><a href="https://github.com/ivanseed">ivanseed</a></b>, <b><a href="https://github.com/haroon-sheikh">haroon-sheikh</a></b>, <b><a href="https://github.com/athyk">athyk</a></b></span>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
