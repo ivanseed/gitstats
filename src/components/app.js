@@ -15,7 +15,7 @@ export default class App extends Component {
       order: 'stars',
       items: []
     };
-    
+
     this.updateState = this.updateState.bind(this);
   }
 

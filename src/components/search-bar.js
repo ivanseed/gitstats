@@ -12,12 +12,26 @@ export default class SearchBar extends Component {
 
   renderSearchContainer(order, searchItems) {
     return searchItems.map(orderid => <div className="search-order">
-      <input id={orderid} type="radio" name="order" value={orderid} checked={order == orderid} onChange={event => this.onSortChange(event.target.id)} />
-      <label className={`order-${orderid}`} htmlFor={orderid}></label>
+      <input
+        id={orderid}
+        type="radio"
+        name="order"
+        value={orderid}
+        checked={order == orderid}
+        onChange={event => this.onSortChange(event.target.id)}
+      />
+      <label
+        className={`order-${orderid}`}
+        htmlFor={orderid}>
+      </label>
     </div>);
   }
 
   render({query, order}) {
+    const {
+      renderSearchContainer,
+      onInputChange
+    } = this
     return (
       <div className="search-container">
         <div className="search-bar-container">
@@ -25,11 +39,11 @@ export default class SearchBar extends Component {
             className="search-bar"
             placeholder="Search..."
             value={query}
-            onChange={event => this.onInputChange(event.target.value)}
+            onChange={event => onInputChange(event.target.value)}
           />
         </div>
         <form className="search-order-container">
-          {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
+          {renderSearchContainer(order, ['stars', 'forks', 'updated'])}
         </form>
       </div>
     );
