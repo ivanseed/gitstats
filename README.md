@@ -1,20 +1,20 @@
 # GitStats
 
 ## Introduction
-A simple PreactJS app that uses the GitHub search API to display repositories in a list. 
+A simple PreactJS app that uses the GitHub search API to display repositories in a list.
 
 Live site:
 https://gitstats.io
 
 [![Build Status](https://travis-ci.org/ivanseed/gitstats.svg?branch=master)](https://travis-ci.org/ivanseed/gitstats) [![Code Climate](https://codeclimate.com/github/ivanseed/gitstats/badges/gpa.svg)](https://codeclimate.com/github/ivanseed/gitstats)
 
-![gitstats.io](https://github.com/ivanseed/gitstats/blob/update-readme/src/assets/GitStatsView.png)
+![gitstats.io](./GitStatsView.png)
 
 ## Features
 
-* Search for github repositories by name. 
+* Search for github repositories by name.
 
-* Details like such as the number of forks, number of stars and a short description of each repository are shown. 
+* Details like such as the number of forks, number of stars and a short description of each repository are shown.
 
 * The repositories can be sorted in ascending/descending order based on number of stars or forks or the last updated time.
 
@@ -24,12 +24,12 @@ Please make sure that node js is setup on the dev machine by running the command
 
   `npm -v`
 
-If not installed, download and install node from here: https://nodejs.org/en/ 
+If not installed, download and install node from here: https://nodejs.org/en/
 
-Run the command below to install the required dependenices: 
-  
-  `npm install` 
-  
+Run the command below to install the required dependenices:
+
+  `npm install`
+
 To run the app on your local machine use the command below:
 
   `npm run start`
