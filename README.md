@@ -3,7 +3,12 @@
 ## Introduction
 A simple PreactJS app that uses the GitHub search API to display repositories in a list. 
 
-![alt text](https://github.com/ivanseed/gitstats/blob/update-readme/src/assets/GitStatsView.png)
+Live site:
+https://gitstats.io
+
+[![Build Status](https://travis-ci.org/ivanseed/gitstats.svg?branch=master)](https://travis-ci.org/ivanseed/gitstats) [![Code Climate](https://codeclimate.com/github/ivanseed/gitstats/badges/gpa.svg)](https://codeclimate.com/github/ivanseed/gitstats)
+
+![gitstats.io](https://github.com/ivanseed/gitstats/blob/update-readme/src/assets/GitStatsView.png)
 
 ## Features
 
