@@ -26,8 +26,8 @@ const repository =  ({item}) => (
     </div>
     <div className="repository-time">
       <TimeIcon />
-      <span>{format(item.updated_at, 'HH:mm:ss')}</span>
-      <span>{format(item.updated_at, 'YYYY/MM/DD')}</span>
+      <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
+      <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
     </div>
   </div>
 );
