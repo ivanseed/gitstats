@@ -1,10 +1,9 @@
 import { h, Component } from 'preact';
 import axios from 'axios';
-import NProgress from '../lib/nprogress.js';
+import Progress from './progress.js';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import Footer from './footer';
-import '../style/nprogress.css';
 
 export default class App extends Component {
 
@@ -16,7 +15,7 @@ export default class App extends Component {
       order: 'stars',
       items: []
     };
-    
+
     this.updateState = this.updateState.bind(this);
   }
 
@@ -29,13 +28,15 @@ export default class App extends Component {
     this.searchGitHub();
   }
 
-  searchGitHub() {
-    NProgress.start();
+  searchGitHub = () => {
+    this.setState({
+      'progress': 'start'
+    });
     axios.get(this.buildUrl())
       .then((response) => {
-        NProgress.done();
         this.setState({
-          'items': response.data.items
+          'items': response.data.items,
+          'progress': 'end'
         });
       })
       .catch((err) => {
@@ -63,6 +64,7 @@ export default class App extends Component {
   render(props, state) {
     return (
       <div id="app">
+        <Progress status={this.state.progress} />
         <div className="title">
           <span>Git<b>Stats</b></span>
         </div>

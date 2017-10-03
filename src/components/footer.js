@@ -9,7 +9,6 @@ export default class Footer extends Component {
     this.state = {
       contributors: []
     };
-    
   }
 
   fetchContributers() {
@@ -27,7 +26,6 @@ export default class Footer extends Component {
   }
 
   render(props, state) {
-    console.log(this.state.contributors)
     return (
       <div className="footer">
         <ul>
