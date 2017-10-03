@@ -8,5 +8,8 @@
     },
     "rules": {
         "indent": ["error", 2]
-    }
+    },
+    "overrides": [{
+      "files": ["src/lib/*.js"]
+    }]
 }

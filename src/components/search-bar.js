@@ -10,6 +10,13 @@ export default class SearchBar extends Component {
     this.props.updateState({order});
   }
 
+  renderSearchContainer(order, searchItems) {
+    return searchItems.map(orderid => <div className="search-order">
+      <input id={orderid} type="radio" name="order" value={orderid} checked={order == orderid} onChange={event => this.onSortChange(event.target.id)} />
+      <label className={`order-${orderid}`} htmlFor={orderid}></label>
+    </div>);
+  }
+
   render({query, order}) {
     return (
       <div className="search-container">
@@ -22,18 +29,7 @@ export default class SearchBar extends Component {
           />
         </div>
         <form className="search-order-container">
-          <div className="search-order">
-            <input id="stars" type="radio" name="order" value="stars" checked={order == 'stars'} onChange={event => this.onSortChange(event.target.id)} />
-            <label className="order-stars" htmlFor="stars"></label>
-          </div>
-          <div className="search-order">
-            <input id="forks" type="radio" name="order" value="forks" checked={order == 'forks'} onChange={event => this.onSortChange(event.target.id)} />
-            <label className="order-forks" htmlFor="forks" alt="Forks"></label>
-          </div>
-          <div className="search-order">
-            <input id="updated" type="radio" name="order" value="updated" checked={order == 'updated'} onChange={event => this.onSortChange(event.target.id)} />
-            <label className="order-updated" htmlFor="updated"></label>
-          </div>
+          {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
         </form>
       </div>
     );

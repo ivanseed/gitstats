@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:400,700');
-
-html, body {
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Nunito');
+html,
+body {
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	background: #FAFAFA;
-	font-family: 'Asap Condensed', 'Helvetica Neue', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-weight: 400;
 	color: #444;
 	-webkit-font-smoothing: antialiased;
@@ -26,12 +26,13 @@ html, body {
 	font-size: 80px;
 	transition: all 0.4s ease;
 	margin: 20px auto 20px auto;
+	font-family: 'Comfortaa', cursive;
 }
 
 .repositories {
 	display: flex;
 	flex-direction: column;
-  justify-content: center;
+	justify-content: center;
 	align-items: center;
 	text-align: left;
 	margin-top: 10px;
@@ -46,11 +47,11 @@ html, body {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 5px;
-	box-shadow: 0 50px 50px rgba(50,50,93,.05), 0 5px 20px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+	box-shadow: 0 50px 50px rgba(50, 50, 93, .05), 0 5px 20px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .1);
 }
 
 .repository-stats {
-  display: flex;
+	display: flex;
 	font-size: 18px;
 	margin-bottom: 10px;
 }
@@ -60,7 +61,7 @@ html, body {
 	margin-left: 20px;
 	font-weight: bold;
 	display: flex;
-  align-items: center;
+	align-items: center;
 }
 
 .repository-time span {
@@ -72,7 +73,6 @@ html, body {
 	.repository-stats div {
 		font-size: 15px;
 	}
-
 	.title {
 		font-size: 60px;
 	}
@@ -82,7 +82,7 @@ html, body {
 	margin-left: 20px;
 	font-weight: bold;
 	display: flex;
-  align-items: center;
+	align-items: center;
 }
 
 .repository-stats div span {
@@ -109,22 +109,23 @@ html, body {
 
 .search-bar-container {
 	display: flex;
-  align-items: center;
-  justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .search-bar {
 	background-color: #efefef;
-  background-image: url('/assets/icons/search-icon.svg');
+	background-image: url('/assets/icons/search-icon.svg');
 	background-size: auto 80%;
-  background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: right center;
-  outline: none;
+	outline: none;
 	width: 90vw;
 	max-width: 700px;
 	height: 7vh;
 	min-height: 50px;
-  font-size: 5vh;
+	font-size: 5vh;
+	font-family: 'Nunito', sans-serif;
 	border: 0px;
 	padding: 0 20px 0 20px;
 	color: #3d3d3d;
@@ -161,8 +162,8 @@ html, body {
 	min-height: 20px;
 	max-height: 60px;
 	background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
+	background-repeat: no-repeat;
+	background-position: center;
 	padding: 20px;
 	background-color: #efefef;
 	border-radius: 5px;
@@ -172,6 +173,10 @@ html, body {
 .search-order label:hover {
 	background-color: #ddd;
 	transition: all 1s ease;
+}
+
+.search-order input {
+    visibility:hidden;
 }
 
 input[type="radio"]:checked+label {
@@ -199,4 +204,32 @@ input[type="radio"]:checked+label {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+}
+
+.footer {
+	padding: 40px;
+	width: 90vw;
+	max-width: 800px;
+	margin: 50px auto 0 auto;
+	border-radius: 6px 6px 0 0;
+}
+
+.footer a {
+	color: #444;
+	text-decoration: none;
+}
+
+.footer ul {
+	padding: 0;
+	margin: 0;
+}
+
+.footer #footer-title {
+	font-size: 30px;
+	padding: 5px 0;
+}
+
+.footer ul li, .footer ul li span {
+	display: block;
+	padding: 2px 0;
 }
