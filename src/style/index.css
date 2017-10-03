@@ -233,3 +233,11 @@ input[type="radio"]:checked+label {
 	display: block;
 	padding: 2px 0;
 }
+
+.footer .contributor {
+	transition: 400ms opacity;
+}
+
+.footer .contributor:hover {
+	opacity: 0.7;
+}

@@ -3,6 +3,7 @@ import axios from 'axios';
 import NProgress from '../lib/nprogress.js';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
+import Footer from './footer';
 import '../style/nprogress.css';
 
 export default class App extends Component {
@@ -73,15 +74,7 @@ export default class App extends Component {
         <RepositoryList
           items={state.items}
         />
-        <div className="footer">
-          <ul>
-            <li id="footer-title"><a href="https://github.com/ivanseed/gitstats"><span>Git<b>Stats</b></span></a></li>
-            <li>
-              <span>Special thanks to all contributors that made this project possible!</span>
-              <span><b><a href="https://github.com/ivanseed">ivanseed</a></b>, <b><a href="https://github.com/haroon-sheikh">haroon-sheikh</a></b>, <b><a href="https://github.com/athyk">athyk</a></b></span>
-            </li>
-          </ul>
-        </div>
+        <Footer />
       </div>
     );
   }
