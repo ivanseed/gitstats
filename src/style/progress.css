@@ -24,6 +24,7 @@
 
     animation: progress--load--end .1s forwards;
     -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
@@ -39,6 +40,8 @@
     opacity: 1.0;
 
     -webkit-transform: rotate(3deg) translate(0px, -1px);
+    -moz-transform: rotate(3deg) translate(0px, -1px);
+    -o-transform: rotate(3deg) translate(0px, -1px);
     -ms-transform: rotate(3deg) translate(0px, -4px);
         transform: rotate(3deg) translate(0px, -4px);
 }
