@@ -1,0 +1,58 @@
+.progress__hidden {
+    visibility: hidden;
+}
+
+.progress__start {
+    height: 5px;
+    width: 100px;
+    background: #14b866;
+    
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+    left: 0;
+}
+
+.progress__end {
+    height: 5px;
+    background: #14b866;
+    width: 100%;
+    
+    position: fixed;
+    z-index: 1031;
+    top: 0;
+
+    animation: progress--load--end .1s forwards;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.progress--glow {
+    height: 5px;
+    width: 100px;
+    
+    position: absolute;
+    z-index: 1031;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 10px #14b866, 0 0 10px #14b866;
+    opacity: 1.0;
+
+    -webkit-transform: rotate(3deg) translate(0px, -1px);
+    -moz-transform: rotate(3deg) translate(0px, -1px);
+    -o-transform: rotate(3deg) translate(0px, -1px);
+    -ms-transform: rotate(3deg) translate(0px, -4px);
+        transform: rotate(3deg) translate(0px, -4px);
+}
+
+
+
+@keyframes progress--load--start {
+    100% { width: 90%}
+}
+
+@keyframes progress--load--end {
+    80% { width: 100%; opacity: 1;}
+    100% { width: 100%; opacity: 0; }
+}
