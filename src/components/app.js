@@ -34,6 +34,7 @@ export default class App extends Component {
     });
     axios.get(this.buildUrl())
       .then((response) => {
+        console.log(response.data.items[0])
         this.setState({
           'items': response.data.items,
           'progress': 'end'
