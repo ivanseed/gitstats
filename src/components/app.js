@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import Helmet from 'preact-helmet';
 import axios from 'axios';
 import Progress from './progress.js';
 import SearchBar from './search-bar';
@@ -64,6 +65,13 @@ export default class App extends Component {
   render(props, state) {
     return (
       <div id="app">
+        <Helmet
+          htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value 
+          meta={[
+            {name: "description", content: "A simple PreactJS app that uses the GitHub search API to display repositories in a list."}
+          ]}
+          title="GitStats"
+        />
         <Progress status={this.state.progress} />
         <div className="title">
           <span>Git<b>Stats</b></span>
