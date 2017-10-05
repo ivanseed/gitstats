@@ -12,6 +12,7 @@ export default class Progress extends Component {
 
     this.startAnimation = this.startAnimation.bind(this);
     this.stopAnimation = this.stopAnimation.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   // Function that loads the bar in intervals
