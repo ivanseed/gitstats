@@ -13,6 +13,8 @@ export default class App extends Component {
     this.state = {
       query: '',
       order: 'stars',
+      languages: ['All Languages', 'JavaScript', 'Python', 'PHP', 'Java', 'Go', 'C++', 'HTML', 'Ruby', 'C#', 'CSS'],
+      language: '',
       items: []
     };
 
@@ -45,7 +47,7 @@ export default class App extends Component {
   }
 
   buildUrl() {
-    let filter;
+    let filter, languageQuery;
 
     if (this.state.order === 'updated') {
       let dateFilter = new Date();
@@ -58,7 +60,13 @@ export default class App extends Component {
       filter = `${this.state.order}:>=1`;
     }
 
-    return `https://api.github.com/search/repositories?q=${this.state.query}+${filter}&sort=${this.state.order}`;
+    if (this.state.language === '' || this.state.language === 'All Languages') {
+      languageQuery = '';
+    } else {
+      languageQuery = `+language:${this.state.language}`;
+    }
+
+    return `https://api.github.com/search/repositories?q=${this.state.query}+${filter}${languageQuery}&sort=${this.state.order}`;
   }
 
   render(props, state) {
@@ -72,6 +80,7 @@ export default class App extends Component {
           updateState={this.updateState}
           query={state.query}
           order={state.order}
+          languages={state.languages}
         />
         <RepositoryList
           items={state.items}
