@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - #29 - Adds changelog
+- #36 - Adds language to repo tile
+- #40 - Improves SEO by adding meta description
+
+### Changed
+- #26 - Improves footer
+- #31 - Now uses local react component for loading bar
+
+### Fixed
+- #32 - Last updated now shows `pushed_at`
 
 ## v1.1.0
 
