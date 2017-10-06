@@ -3,20 +3,13 @@ import '../style/progress.css';
 
 export default class Progress extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: 0,
-      maxWidth: window.innerWidth
-    };
-
-    this.startAnimation = this.startAnimation.bind(this);
-    this.stopAnimation = this.stopAnimation.bind(this);
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
+  state = {
+    width: 0,
+    maxWidth: window.innerWidth
+  };
 
   // Function that loads the bar in intervals
-  growBar() {
+  growBar = () => {
     const growSize = 100;
 
     // Don't complete the loading bar until we are actually complete
@@ -29,27 +22,27 @@ export default class Progress extends Component {
     }
   }
 
-  resetProgressSize() {
+  resetProgressSize = () => {
     this.setState({ width: 0 });
   }
 
-  startAnimation() {
-    this.updateInterval = setInterval(this.growBar.bind(this), 400);
+  startAnimation = () => {
+    this.updateInterval = setInterval(this.growBar, 400);
   }
 
-  stopAnimation() {
+  stopAnimation = () => {
     clearInterval(this.updateInterval);
     this.updateInterval = false;
-    setTimeout(this.resetProgressSize.bind(this), 300);
+    setTimeout(this.resetProgressSize, 300);
   }
 
-  updateWindowDimensions() {
+  updateWindowDimensions = () => {
     this.setState({ maxWidth: window.innerWidth });
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.updateWindowDimensions);
-    setInterval(this.growBar.bind(this), 400);
+    setInterval(this.growBar, 400);
   }
 
   componentDidUpdate() {
@@ -64,7 +57,8 @@ export default class Progress extends Component {
     return (
       <div ref={e => { this.elm = e; }}
         className={'progress__' + this.props.status + ' progress'}
-        style={{width: this.state.width}}>
+        style={{ width: this.state.width }}
+      >
         <div className='progress--glow'></div>
       </div>
     );
