@@ -1,26 +1,21 @@
 import { h, Component } from 'preact';
 import Helmet from 'preact-helmet';
 import axios from 'axios';
-import Progress from './progress.js';
+import Progress from './progress';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import Footer from './footer';
+import Title from './title';
 
 export default class App extends Component {
 
-  constructor(props) {
-    super(props);
+  state = {
+    query: '',
+    order: 'stars',
+    items: []
+  };
 
-    this.state = {
-      query: '',
-      order: 'stars',
-      items: []
-    };
-
-    this.updateState = this.updateState.bind(this);
-  }
-
-  updateState(data) {
+  updateState = (data) => {
     this.setState(data);
     this.searchGitHub();
   }
@@ -66,15 +61,15 @@ export default class App extends Component {
     return (
       <div id="app">
         <Helmet
-          htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value 
+          htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
           meta={[
             {name: "description", content: "A simple PreactJS app that uses the GitHub search API to display repositories in a list."}
           ]}
           title="GitStats"
         />
-        <Progress status={this.state.progress} />
+        <Progress status={state.progress} />
         <div className="title">
-          <span>Git<b>Stats</b></span>
+          <Title />
         </div>
         <SearchBar
           updateState={this.updateState}
