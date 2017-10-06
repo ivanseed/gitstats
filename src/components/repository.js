@@ -1,7 +1,12 @@
 import { h } from 'preact';
 import format from 'date-fns/format';
-import { StarIcon, ForkIcon, IssueIcon, TimeIcon, CodeIcon } from "./icons";
-
+import {
+  StarIcon,
+  RepoForkedIcon,
+  IssueOpenedIcon,
+  CodeIcon,
+  HistoryIcon
+} from 'react-octicons';
 
 const getLanguageDisplayStyle = (language) =>
   `display: ${language ? 'auto' : 'none'}`;
@@ -22,11 +27,11 @@ const Repository =  ({ item }) => (
         <span>{item.stargazers_count}</span>
       </div>
       <div className="repository-forks">
-        <ForkIcon />
+        <RepoForkedIcon />
         <span>{item.forks_count}</span>
       </div>
       <div className="repository-issues">
-        <IssueIcon />
+        <IssueOpenedIcon />
         <span>{item.open_issues_count}</span>
       </div>
     </div>
@@ -38,7 +43,7 @@ const Repository =  ({ item }) => (
       <span>{item.language}</span>
     </div>
     <div className="repository-time">
-      <TimeIcon />
+      <HistoryIcon />
       <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
       <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
     </div>
