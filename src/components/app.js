@@ -1,10 +1,10 @@
 import { h, Component } from 'preact';
 import Helmet from 'preact-helmet';
 import axios from 'axios';
-import Progress from './Progress';
-import SearchBar from './SearchBar';
-import RepositoryList from './RepositoryList';
-import Footer from './Footer';
+import Progress from './progress';
+import SearchBar from './search-bar';
+import RepositoryList from './repository-list';
+import Footer from './footer';
 
 export default class App extends Component {
 

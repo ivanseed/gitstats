@@ -53,11 +53,11 @@ export default class Progress extends Component {
     }
   }
 
-  render() {
+  render(props, state) {
     return (
-      <div ref={e => { this.elm = e; }}
-        className={'progress__' + this.props.status + ' progress'}
-        style={{ width: this.state.width }}
+      <div
+        className={'progress__' + props.status + ' progress'}
+        style={{ width: state.width }}
       >
         <div className='progress--glow'></div>
       </div>
