@@ -3,13 +3,9 @@ import axios from 'axios';
 
 export default class Footer extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      contributors: []
-    };
-  }
+  state = {
+    contributors: []
+  };
 
   fetchContributers() {
     axios.get('https://api.github.com/repos/ivanseed/gitstats/contributors')
@@ -21,26 +17,29 @@ export default class Footer extends Component {
       })
   }
 
-  componentWillMount() {
-    this.fetchContributers();
-  }
+  componentWillMount = this.fetchContributers;
 
   render(props, state) {
     return (
       <div className="footer">
         <ul>
-          <li id="footer-title"><a href="https://github.com/ivanseed/gitstats"><span>Git<b>Stats</b></span></a></li>
+          <li id="footer-title">
+            <a href="https://github.com/ivanseed/gitstats">
+              <span>Git<b>Stats</b></span>
+            </a>
+          </li>
           <li>
             <span>Special thanks to all contributors that made this project possible!</span>
             <span>
-              {
-                state.contributors.map((contributor, i) => (
-                  <b className="contributor">
-                    <a href={`https://github.com/${contributor.login}`}>{contributor.login}</a>
-                    { i + 1 === state.contributors.length ? '' : ', ' /* don't render comma on final name */ }
-                  </b>
-                ))
-              }
+              {state.contributors.map((contributor, i) =>
+                <b className="contributor">
+                  <a href={`https://github.com/${contributor.login}`}>
+                    {contributor.login}
+                  </a>
+                  {/* Don't render comma on final name */}
+                  { i + 1 === state.contributors.length ? '' : ', '}
+                </b>
+              )}
             </span>
           </li>
         </ul>
