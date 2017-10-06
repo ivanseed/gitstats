@@ -135,7 +135,7 @@ body {
 	background-position: right center;
 	outline: none;
 	width: 90vw;
-	max-width: 700px;
+	max-width: 600px;
 	height: 7vh;
 	min-height: 50px;
 	font-size: 5vh;
@@ -221,10 +221,13 @@ input[type="radio"]:checked+label {
 }
 
 .language-dropdown {
-	margin: 0 30px 0 30px;
+	margin: 0 0 0 30px;
 	background-color: #efefef;
 	font-size: 16px;
-	height: 60px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	color: #222;
+	height: 50px;
 	width: 150px;
 }
 
