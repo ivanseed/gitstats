@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import format from 'date-fns/format';
 import { StarIcon, ForkIcon, IssueIcon, TimeIcon, CodeIcon } from "./icons";
 

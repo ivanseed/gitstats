@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import axios from 'axios';
+import Title from './title';
 
 export default class Footer extends Component {
 
@@ -25,7 +26,7 @@ export default class Footer extends Component {
         <ul>
           <li id="footer-title">
             <a href="https://github.com/ivanseed/gitstats">
-              <span>Git<b>Stats</b></span>
+              <Title />
             </a>
           </li>
           <li>

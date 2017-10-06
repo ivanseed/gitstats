@@ -5,6 +5,7 @@ import Progress from './progress';
 import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import Footer from './footer';
+import Title from './title';
 
 export default class App extends Component {
 
@@ -68,7 +69,7 @@ export default class App extends Component {
         />
         <Progress status={state.progress} />
         <div className="title">
-          <span>Git<b>Stats</b></span>
+          <Title />
         </div>
         <SearchBar
           updateState={this.updateState}

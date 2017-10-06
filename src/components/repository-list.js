@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import Repository from './repository';
 
 const RepositoryList = ({ items }) => (
