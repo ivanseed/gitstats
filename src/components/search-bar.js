@@ -47,8 +47,8 @@ export default class SearchBar extends Component {
         </div>
         <form className="search-order-container">
           {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
-          {this.renderLanguageDropdown(languages)}
         </form>
+        {this.renderLanguageDropdown(languages)}
       </div>
     );
   }
