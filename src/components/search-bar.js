@@ -6,6 +6,10 @@ export default class SearchBar extends Component {
 
   onSortChange = order => this.props.updateState({ order });
 
+  onLanguageChange(language) {
+    this.props.updateState({language});
+  }
+
   renderSearchContainer(order, searchItems) {
     return searchItems.map((orderid) =>
       <div className="search-order">
@@ -22,7 +26,15 @@ export default class SearchBar extends Component {
     );
   }
 
-  render({ query, order }) {
+  renderLanguageDropdown(languages) {
+    return <select className="language-dropdown" onChange={event => this.onLanguageChange(event.target.value)}>
+      {languages.map(language => {
+        return <option value={language}>{language}</option>;
+      })}
+    </select>
+  }
+
+  render({query, order, languages}) {
     return (
       <div className="search-container">
         <div className="search-bar-container">
@@ -35,6 +47,7 @@ export default class SearchBar extends Component {
         </div>
         <form className="search-order-container">
           {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
+          {this.renderLanguageDropdown(languages)}
         </form>
       </div>
     );
