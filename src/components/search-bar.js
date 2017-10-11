@@ -44,10 +44,10 @@ export default class SearchBar extends Component {
             value={query}
             onChange={event => this.onInputChange(event.target.value)}
           />
+          {this.renderLanguageDropdown(languages)}
         </div>
         <form className="search-order-container">
           {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
-          {this.renderLanguageDropdown(languages)}
         </form>
       </div>
     );
