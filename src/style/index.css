@@ -193,6 +193,7 @@ body {
     visibility:hidden;
 }
 
+
 input[type="radio"]:checked+label {
 	cursor: initial;
 	box-shadow: 0 0 20px #aaa;
@@ -225,7 +226,31 @@ input[type="radio"]:checked+label {
 	background-color: #efefef;
 	font-size: 16px;
 	height: 60px;
+	padding: 0 10px;
 	width: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	text-align-last: center;
+	/* Optional, gets rid of arrow */
+	/* appearance: none; */
+	transition: border-bottom .2s;
+	border-bottom: 0px solid #DDD;
+}
+
+/* Optional */
+
+/* .language-dropdown:hover {
+	border-bottom: 3px solid #DDD;
+} */
+
+.language-dropdown:focus {
+	outline: none;
+}
+
+.language-dropdown > option {
+	background-color: #efefef;
 }
 
 .footer {
