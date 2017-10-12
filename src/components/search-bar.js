@@ -44,6 +44,11 @@ export default class SearchBar extends Component {
             value={query}
             onChange={event => this.onInputChange(event.target.value)}
           />
+          <img
+            className="search-icon"
+            alt=""
+            src="/assets/icons/search-icon.svg"
+          />
         </div>
         <div class="search-filter-container">
           <form className="search-order-container">
