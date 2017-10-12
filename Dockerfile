@@ -2,9 +2,9 @@ FROM node:6
 
 WORKDIR /app
 
-COPY package.json /app
+COPY package.json package-lock.json .eslintrc .eslintignore /app/
 
-RUN npm install --quiet
+RUN npm install --loglevel=error
 
 COPY src/ /app/src/
 

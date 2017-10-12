@@ -29,6 +29,11 @@ export default class Footer extends Component {
               <Title />
             </a>
           </li>
+          <li className="footer-fork">
+            <a href="https://github.com/ivanseed/gitstats">
+              <span>Fork me on <b>Github</b></span>
+            </a>
+          </li>
           <li>
             <span>Special thanks to all contributors that made this project possible!</span>
             <span>
@@ -41,6 +46,13 @@ export default class Footer extends Component {
                   { i + 1 === state.contributors.length ? '' : ', '}
                 </b>
               )}
+            </span>
+          </li>
+          <li>
+            <span className="footer-copyright">
+              <a href="https://github.com/ivanseed/gitstats/blob/master/LICENSE" target="_blank">
+              MIT License. Copyright ©
+              </a>
             </span>
           </li>
         </ul>

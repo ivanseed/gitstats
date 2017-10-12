@@ -12,13 +12,10 @@ node_js:
   - "stable"
 
 before_script:
-  - npm install
   - docker-compose build
-  - docker-compose up -d
-  - sleep 3
 
 script:
- - npm test
+  - docker run gitstats_web npm test
 
 after_script:
   - docker-compose kill
