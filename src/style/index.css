@@ -39,15 +39,29 @@ body {
 }
 
 .repository {
-	width: 90vw;
-	overflow-wrap: break-word;
-	max-width: 800px;
+	display: block;
+	position: relative;
 	height: auto;
-	background-color: #efefef;
+	width: 90vw;
+	max-width: 800px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	overflow-wrap: break-word;
 	border-radius: 5px;
-	box-shadow: 0 50px 50px rgba(50, 50, 93, .05), 0 5px 20px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .1);
+	text-decoration: none;
+	color: inherit;
+	background-color: #efefef;
+	transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+}
+
+.repository:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px #ccc;
+}
+
+.repository:active {
+	transform: scale(0.9);
+	opacity: 0.8;
 }
 
 .repository-name {
@@ -72,29 +86,33 @@ body {
 	margin: auto 20px 30px 20px;
 }
 
-.repository-stats,
-.repository-language,
-.repository-time {
-	margin-bottom: 10px;
-	margin-left: 20px;
+.repository-meta-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 	font-weight: bold;
 	font-size: 20px;
+}
+
+.repository-meta {
+	margin-bottom: 10px;
+	margin-left: 20px;
 	display: flex;
 	align-items: center;
 }
 
-.repository-stats span,
-.repository-language span,
-.repository-time span {
+.repository-meta span {
 	margin-left: 5px;
 	margin-right: 5px;
 }
 
-.repository-stats svg,
-.repository-language svg,
-.repository-time svg {
+.repository-meta svg {
 	width: 24px;
 	height: 24px;
+}
+
+.repository-stats {
+	margin: 10px;
 }
 
 .repository-stats div {
@@ -106,11 +124,15 @@ body {
 	margin-left: 10px;
 }
 
-@media screen and (max-width: 500px) {
-	.repository-stats,
-	.repository-language,
-	.repository-time {
+@media screen and (max-width: 800px) {
+	.repository-meta-container {
 		font-size: 15px;
+		display: block;
+	}
+
+	.repository-stats {
+		margin-bottom: 10px;
+		margin-left: 20px;
 	}
 
 	.title {
@@ -203,24 +225,26 @@ body {
 	background-color: #efefef;
 	border-radius: 5px;
 	cursor: pointer;
+	transition: transform 0.2s, opacity 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
 .search-order label:hover {
-	background-color: #ddd;
-	box-shadow: inset 0 0 15px #aaa;
-	transition: all 1s ease;
+	transform: scale(1.1);
+	box-shadow: 0 0 10px #ccc;
+}
+
+.search-order label:active {
+	transform: scale(0.9);
+	opacity: 0.8;
 }
 
 .search-order input {
-    visibility:hidden;
+	visibility: hidden;
 }
 
-
-input[type="radio"]:checked+label {
+.search-order input[type="radio"]:checked + label {
 	cursor: initial;
-	box-shadow: 0 0 20px #aaa;
 	background-color: #14b866;
-	transition: all 0.7s ease;
 }
 
 .order-stars {

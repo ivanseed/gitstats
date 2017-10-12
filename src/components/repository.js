@@ -15,42 +15,46 @@ const getAvatarStyle= (url) =>
   `background-image: url('${url}')`
 
 const Repository =  ({ item }) => (
-  <div className="repository">
-    <div className="repository-name" style={getAvatarStyle(item.owner.avatar_url)}>
-      <a href={item.html_url}>
+  <a className="repository" href={item.html_url} target="_blank">
+    <div>
+      <div className="repository-name" style={getAvatarStyle(item.owner.avatar_url)}>
         <span>{item.owner.login}/<b>{item.name}</b></span>
-      </a>
-    </div>
-    <div className="repository-description">
-      <span>{item.description}</span>
-    </div>
-    <div className="repository-stats">
-      <div className="repository-stars">
-        <StarIcon />
-        <span>{item.stargazers_count}</span>
       </div>
-      <div className="repository-forks">
-        <RepoForkedIcon />
-        <span>{item.forks_count}</span>
+      <div className="repository-description">
+        <span>{item.description}</span>
       </div>
-      <div className="repository-issues">
-        <IssueOpenedIcon />
-        <span>{item.open_issues_count}</span>
+      <div class="repository-meta-container">
+        <div>
+          <div
+            className="repository-meta repository-language"
+            style={getLanguageDisplayStyle(item.language)}
+          >
+            <CodeIcon />
+            <span>{item.language}</span>
+          </div>
+          <div className="repository-meta repository-time">
+            <HistoryIcon />
+            <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
+            <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
+          </div>
+        </div>
+        <div className="repository-meta repository-stats">
+          <div className="repository-stars">
+            <StarIcon />
+            <span>{item.stargazers_count}</span>
+          </div>
+          <div className="repository-forks">
+            <RepoForkedIcon />
+            <span>{item.forks_count}</span>
+          </div>
+          <div className="repository-issues">
+            <IssueOpenedIcon />
+            <span>{item.open_issues_count}</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div
-      className="repository-language"
-      style={getLanguageDisplayStyle(item.language)}
-    >
-      <CodeIcon />
-      <span>{item.language}</span>
-    </div>
-    <div className="repository-time">
-      <HistoryIcon />
-      <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
-      <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
-    </div>
-  </div>
+  </a>
 );
 
 export default Repository;
