@@ -50,59 +50,6 @@ body {
 	box-shadow: 0 50px 50px rgba(50, 50, 93, .05), 0 5px 20px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .1);
 }
 
-.repository-stats {
-	display: flex;
-	font-size: 18px;
-	margin-bottom: 10px;
-}
-
-.repository-language {
-	margin-bottom: 10px;
-	margin-left: 20px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-}
-
-.repository-language span {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-
-.repository-time {
-	margin-bottom: 10px;
-	margin-left: 20px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-}
-
-.repository-time span {
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-@media screen and (max-width: 500px) {
-	.repository-stats div {
-		font-size: 15px;
-	}
-	.title {
-		font-size: 60px;
-	}
-}
-
-.repository-stats div {
-	margin-left: 20px;
-	font-weight: bold;
-	display: flex;
-	align-items: center;
-}
-
-.repository-stats div span {
-	margin-left: 5px;
-}
-
 .repository-name {
 	font-size: 33px;
 	margin: 10px 20px 10px 20px;
@@ -118,7 +65,53 @@ body {
 }
 
 .repository-description {
-	margin: auto 20px 10px 20px;
+	margin: auto 20px 30px 20px;
+}
+
+.repository-stats,
+.repository-language,
+.repository-time {
+	margin-bottom: 10px;
+	margin-left: 20px;
+	font-weight: bold;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.repository-stats span,
+.repository-language span,
+.repository-time span {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.repository-stats svg,
+.repository-language svg,
+.repository-time svg {
+	width: 24px;
+	height: 24px;
+}
+
+.repository-stats div {
+	display: flex;
+	align-items: center;
+}
+
+.repository-stats > div + div {
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 500px) {
+	.repository-stats,
+	.repository-language,
+	.repository-time {
+		font-size: 15px;
+	}
+
+	.title {
+		font-size: 60px;
+	}
 }
 
 .search-bar-container {
