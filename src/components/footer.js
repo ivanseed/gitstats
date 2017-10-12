@@ -24,10 +24,9 @@ export default class Footer extends Component {
     return (
       <div className="footer">
         <ul>
-          <li id="footer-title">
-            <a href="https://github.com/ivanseed/gitstats">
-              <Title />
-            </a>
+          <li>
+            <a href = "https://github.com/ivanseed/gitstats"><p>Fork me on GitHub!</p></a>
+            <a href="https://github.com/ivanseed/gitstats/blob/master/LICENSE"><p>MIT License Copyright©</p></a>
           </li>
           <li className="footer-fork">
             <a href="https://github.com/ivanseed/gitstats">
