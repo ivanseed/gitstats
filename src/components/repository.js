@@ -5,7 +5,8 @@ import {
   RepoForkedIcon,
   IssueOpenedIcon,
   CodeIcon,
-  HistoryIcon
+  HistoryIcon,
+  CalendarIcon
 } from 'react-octicons';
 
 const getLanguageDisplayStyle = (language) =>
@@ -43,9 +44,16 @@ const Repository =  ({ item }) => (
       <span>{item.language}</span>
     </div>
     <div className="repository-time">
-      <HistoryIcon />
-      <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
-      <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
+      <div>
+        <HistoryIcon />
+        <span>{format(item.pushed_at, 'HH:mm:ss')}</span>
+        <span>{format(item.pushed_at, 'YYYY/MM/DD')}</span>
+      </div>
+      <div className="repository-created">
+        <CalendarIcon />
+        <span>{format(item.created_at, 'YYYY/MM/DD')}</span>
+        <span>{format(item.created_at, 'HH:mm:ss')}</span>
+      </div>
     </div>
   </div>
 );

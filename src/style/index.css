@@ -69,13 +69,17 @@ body {
 	margin-right: 5px;
 }
 
-
 .repository-time {
 	margin-bottom: 10px;
 	margin-left: 20px;
+	margin-right: 20px;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
+}
+
+.repository-created {
+	margin-left: auto;
 }
 
 .repository-time span {
@@ -191,9 +195,8 @@ body {
 }
 
 .search-order input {
-    visibility:hidden;
+	visibility: hidden;
 }
-
 
 input[type="radio"]:checked+label {
 	cursor: initial;
@@ -245,7 +248,7 @@ input[type="radio"]:checked+label {
 	outline: none;
 }
 
-.language-dropdown > option {
+.language-dropdown>option {
 	background-color: #efefef;
 }
 
@@ -271,7 +274,8 @@ input[type="radio"]:checked+label {
 	padding: 5px 0;
 }
 
-.footer ul li, .footer ul li span {
+.footer ul li,
+.footer ul li span {
 	display: block;
 	padding: 2px 0;
 }
