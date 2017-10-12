@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import format from 'date-fns/format';
+import Emoji from 'react-emoji-render';
 import {
   StarIcon,
   RepoForkedIcon,
@@ -21,7 +22,7 @@ const Repository =  ({ item }) => (
         <span>{item.owner.login}/<b>{item.name}</b></span>
       </div>
       <div className="repository-description">
-        <span>{item.description}</span>
+        <Emoji text={item.description} />
       </div>
       <div class="repository-meta-container">
         <div>
