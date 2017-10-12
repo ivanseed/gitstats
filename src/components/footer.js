@@ -49,11 +49,7 @@ export default class Footer extends Component {
             </span>
           </li>
           <li>
-            <span className="footer-copyright">
-              <a href="https://github.com/ivanseed/gitstats/blob/master/LICENSE" target="_blank">
-              MIT License. Copyright ©
-              </a>
-            </span>
+            <span className="licence-text"><a href="https://github.com/ivanseed/gitstats/blob/master/LICENSE">MIT License Copyright (c) 2017 Ivan Seed</a></span>
           </li>
         </ul>
       </div>
