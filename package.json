@@ -30,10 +30,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "date-fns": "^1.28.5",
-    "node-emoji": "^1.8.1",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0",
     "preact-helmet": "^4.0.0-alpha-3",
+    "react-emoji-render": "^0.4.2",
     "react-octicons": "^0.2.0"
   }
 }
