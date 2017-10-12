@@ -51,8 +51,12 @@ body {
 }
 
 .repository-name {
+	min-height: 50px;
 	font-size: 33px;
 	margin: 10px 20px 10px 20px;
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	padding-left: 60px;
 }
 
 .repository-name a {
@@ -112,6 +116,10 @@ body {
 	.title {
 		font-size: 60px;
 	}
+}
+
+.repository-description {
+	margin: auto 20px 10px 20px;
 }
 
 .search-bar-container {

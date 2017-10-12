@@ -11,9 +11,12 @@ import {
 const getLanguageDisplayStyle = (language) =>
   `display: ${language ? 'auto' : 'none'}`;
 
+const getAvatarStyle= (url) =>
+  `background-image: url('${url}')`
+
 const Repository =  ({ item }) => (
   <div className="repository">
-    <div className="repository-name">
+    <div className="repository-name" style={getAvatarStyle(item.owner.avatar_url)}>
       <a href={item.html_url}>
         <span>{item.owner.login}/<b>{item.name}</b></span>
       </a>
