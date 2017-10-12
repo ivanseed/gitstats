@@ -50,12 +50,10 @@ export default class SearchBar extends Component {
             src="/assets/icons/search-icon.svg"
           />
         </div>
-        <div class="search-filter-container">
-          <form className="search-order-container">
-            {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
-          </form>
-          {this.renderLanguageDropdown(languages)}
-        </div>
+        <form className="search-order-container">
+          {this.renderSearchContainer(order, ['stars', 'forks', 'updated'])}
+        </form>
+        {this.renderLanguageDropdown(languages)}
       </div>
     );
   }
