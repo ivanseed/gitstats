@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import format from 'date-fns/format';
-import emoji from 'node-emoji';
+import Emoji from 'react-emoji-render';
 import {
   StarIcon,
   RepoForkedIcon,
@@ -16,13 +16,13 @@ const getAvatarStyle= (url) =>
   `background-image: url('${url}')`
 
 const Repository =  ({ item }) => (
-  <a className="repository" href={item.html_url} target="_blank">
+  <a className="repository" href={item.html_url} target="_blank" rel="noopener">
     <div>
       <div className="repository-name" style={getAvatarStyle(item.owner.avatar_url)}>
         <span>{item.owner.login}/<b>{item.name}</b></span>
       </div>
       <div className="repository-description">
-        <span>{emoji.emojify(item.description, () => { return '' })}</span>
+        <Emoji text={item.description} />
       </div>
       <div class="repository-meta-container">
         <div>
