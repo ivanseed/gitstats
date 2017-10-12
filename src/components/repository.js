@@ -15,6 +15,7 @@ const Repository =  ({ item }) => (
   <div className="repository">
     <div className="repository-name">
       <a href={item.html_url}>
+        <img src={item.owner.avatar_url} />
         <span>{item.owner.login}/<b>{item.name}</b></span>
       </a>
     </div>
