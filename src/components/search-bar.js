@@ -42,6 +42,7 @@ export default class SearchBar extends Component {
             className="search-bar"
             placeholder="Search..."
             value={query}
+            spellcheck="false"
             onChange={event => this.onInputChange(event.target.value)}
           />
           <img
