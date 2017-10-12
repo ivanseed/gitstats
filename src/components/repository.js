@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import format from 'date-fns/format';
+import emoji from 'node-emoji';
 import {
   StarIcon,
   RepoForkedIcon,
@@ -21,7 +22,7 @@ const Repository =  ({ item }) => (
         <span>{item.owner.login}/<b>{item.name}</b></span>
       </div>
       <div className="repository-description">
-        <span>{item.description}</span>
+        <span>{emoji.emojify(item.description, () => { return '' })}</span>
       </div>
       <div class="repository-meta-container">
         <div>
