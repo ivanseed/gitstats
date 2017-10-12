@@ -16,7 +16,7 @@ const getAvatarStyle= (url) =>
   `background-image: url('${url}')`
 
 const Repository =  ({ item }) => (
-  <a className="repository" href={item.html_url} target="_blank">
+  <a className="repository" href={item.html_url} target="_blank" rel="noopener">
     <div>
       <div className="repository-name" style={getAvatarStyle(item.owner.avatar_url)}>
         <span>{item.owner.login}/<b>{item.name}</b></span>
