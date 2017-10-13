@@ -7,7 +7,7 @@ import {
   IssueOpenedIcon,
   CodeIcon,
   HistoryIcon
-} from 'react-octicons';
+} from './octicons';
 
 const getLanguageDisplayStyle = (language) =>
   `display: ${language ? 'auto' : 'none'}`;
