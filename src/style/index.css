@@ -285,7 +285,7 @@ body {
 	background-color: #eee;
 	box-shadow: inset 0 -8px 8px -6px #aaa;
 	transition: all 0.2s;
-	box-shadow: 0 0 10px #ccc;
+	box-shadow: 0 0 9px #ccc;
 }
 
 .language-dropdown:focus {
@@ -382,7 +382,4 @@ body {
     right: 2.5px;
     top: 47.2px;
     transition: all 0.3s linear;
-}
-.custom-selectbox.open:after{
-    transform: rotate(-180deg);
 }
