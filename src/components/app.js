@@ -6,6 +6,7 @@ import SearchBar from './search-bar';
 import RepositoryList from './repository-list';
 import Footer from './footer';
 import Title from './title';
+import Error from './error';
 
 export default class App extends Component {
 
@@ -14,7 +15,8 @@ export default class App extends Component {
     order: 'stars',
     languages: ['All Languages', 'JavaScript', 'Python', 'PHP', 'Java', 'Go', 'C++', 'HTML', 'Ruby', 'C#', 'CSS'],
     language: '',
-    items: []
+    items: [],
+    error: null,
   };
 
   updateState = (data) => {
@@ -38,7 +40,7 @@ export default class App extends Component {
         });
       })
       .catch((err) => {
-        console.log('gota error');
+        this.setState({ error: err, progress: 'end' })
       });
   }
 
@@ -85,6 +87,9 @@ export default class App extends Component {
           order={state.order}
           languages={state.languages}
         />
+        {
+          this.state.error && <Error resourceName="repository list" />
+        }
         <RepositoryList
           items={state.items}
         />

@@ -1,11 +1,13 @@
 import { h, Component } from 'preact';
 import axios from 'axios';
 import Title from './title';
+import Error from './error';
 
 export default class Footer extends Component {
 
   state = {
-    contributors: []
+    contributors: [],
+    error: null,
   };
 
   fetchContributers() {
@@ -14,7 +16,7 @@ export default class Footer extends Component {
         this.setState({ contributors: response.data })
       })
       .catch(err => {
-        console.log('gota error :(')
+        this.setState({ error: err })
       })
   }
 
@@ -31,6 +33,9 @@ export default class Footer extends Component {
           </li>
           <li>
             <span>Special thanks to all contributors that made this project possible!</span>
+            {
+              this.state.error && <Error resourceName="contributer list" />
+            }
             <span>
               {state.contributors.map((contributor, i) =>
                 <b className="contributor">

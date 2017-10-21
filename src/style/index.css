@@ -344,3 +344,9 @@ body {
 .footer .licence-text {
 	font-size: 12px;
 }
+
+.error {
+	color: red;
+	font-size: 20px;
+	margin-top: 40px;
+}
