@@ -73,3 +73,6 @@ docker-compose up -d
 
 * https://preactjs.com/
 
+## License
+
+[MIT License Copyright (c) 2017 Ivan Seed](https://github.com/ivanseed/gitstats/blob/master/LICENSE)
