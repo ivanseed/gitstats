@@ -283,7 +283,7 @@ body {
 
 .language-dropdown:hover {
 	background-color: #eee;
-	
+
 	transition: all 0.2s;
 	box-shadow: 0 0 10px #ccc;
 }
@@ -294,7 +294,7 @@ body {
 .language-dropdown-option {
 	transition: all 0.2s;
 	box-shadow: 0 0 10px #ccc;
-	
+
 }
 .language-dropdown > option {
 	background-color: #efefef;
@@ -353,7 +353,7 @@ body {
 
 .select_mate {
   position: relative;
- 
+
   min-width: 300px;
   width: 300px;
   min-height: 60px;
@@ -366,11 +366,11 @@ body {
   transition: all 375ms ease-in-out;
 }
 
-
 .custom-selectbox{
     position: relative;
     display: inline-block;
 }
+
 .custom-selectbox:after{
     content: " ";
     height: 0;
@@ -382,4 +382,10 @@ body {
     right: 2.5px;
     top: 47.2px;
     transition: all 0.3s linear;
+}
+
+.error {
+	color: red;
+	font-size: 20px;
+	margin-top: 40px;
 }
