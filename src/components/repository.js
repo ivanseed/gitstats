@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import format from 'date-fns/format';
 import emoji from 'node-emoji';
+/*
 import {
   StarIcon,
   RepoForkedIcon,
@@ -8,6 +9,12 @@ import {
   CodeIcon,
   HistoryIcon
 } from 'react-octicons';
+*/
+import StarIcon from 'react-octicons/lib/star';
+import RepoForkedIcon from 'react-octicons/lib/repo-forked';
+import IssueOpenedIcon from 'react-octicons/lib/issue-opened';
+import CodeIcon from 'react-octicons/lib/code';
+import HistoryIcon from 'react-octicons/lib/history';
 
 const getLanguageDisplayStyle = (language) =>
   `display: ${language ? 'auto' : 'none'}`;
