@@ -27,11 +27,11 @@ export default class SearchBar extends Component {
   }
 
   renderLanguageDropdown(languages) {
-    return <select className="language-dropdown" onChange={event => this.onLanguageChange(event.target.value)}>
+    return <div className="custom-selectbox"><select className="language-dropdown" onChange={event => this.onLanguageChange(event.target.value)}>
       {languages.map(language => {
-        return <option value={language}>{language}</option>;
+        return <option value={language} className="language-dropdown-option"><span >{language}</span></option>;
       })}
-    </select>
+    </select></div>
   }
 
   render({query, order, languages}) {
