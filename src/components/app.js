@@ -44,6 +44,25 @@ export default class App extends Component {
       });
   }
 
+  loadMore = () => {
+    // calculate next page;
+    const page = this.state.items.length / 30 + 1;
+    this.setState({
+      'progress': 'start'
+    });
+    axios.get(`${this.buildUrl()}&page=${page}`)
+      .then(response => {
+        this.setState({
+          // 'items': [...this.state.items, ...response.data.items],
+          items: arr, 
+          'progress': 'end',
+        })
+      })
+      .catch(err => {
+        console.log('gota error');
+      })
+  }
+
   buildUrl() {
     let filter, languageQuery;
 
@@ -92,6 +111,7 @@ export default class App extends Component {
         }
         <RepositoryList
           items={state.items}
+          loadMore={this.loadMore}
         />
         <Footer />
       </div>
