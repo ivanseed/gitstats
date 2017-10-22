@@ -38,6 +38,15 @@ body {
 	margin-top: 10px;
 }
 
+.load-more {
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.load-more:hover {
+	text-decoration: underline;
+}
+
 .repository {
 	display: block;
 	position: relative;
