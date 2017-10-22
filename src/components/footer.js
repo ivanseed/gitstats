@@ -13,10 +13,10 @@ export default class Footer extends Component {
   fetchContributers() {
     axios.get('https://api.github.com/repos/ivanseed/gitstats/contributors')
       .then(response => {
-        this.setState({ contributors: response.data })
+        this.setState({ contributors: response.data });
       })
       .catch(err => {
-        this.setState({ error: err })
+        this.setState({ error: err });
       })
   }
 
