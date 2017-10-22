@@ -63,8 +63,16 @@ docker-compose up -d
 
 ## External Libraries Used
 
-* NProgress.js
+* [axios](https://github.com/axios/axios)
+* [data-fns](https://date-fns.org)
+* [preact-helmet](https://www.npmjs.com/package/preact-helmet)
+* [node-emoji](https://github.com/omnidan/node-emoji)
+* [react-octicons](https://insin.github.io/react-octicon/)
 
 ## Additional Resources
 
 * https://preactjs.com/
+
+## License
+
+[MIT License Copyright (c) 2017 Ivan Seed](https://github.com/ivanseed/gitstats/blob/master/LICENSE)

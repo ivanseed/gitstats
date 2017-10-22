@@ -2,7 +2,7 @@ import { h } from 'preact';
 import Repository from './repository';
 
 const RepositoryList = ({ items, loadMore }) => (
-  <div className="repositories">
+  <div className="repositories col-md-6">
     {items.map((item, key) =>
       <Repository item={item} key={key} />
     )}

@@ -13,7 +13,7 @@ export default class Progress extends Component {
     const growSize = 100;
 
     // Don't complete the loading bar until we are actually complete
-    if (this.state.width + growSize < this.state.maxWidth) {
+    if (((this.state.width + growSize) < this.state.maxWidth) && this.props.status === 'start') {
       this.setState({
         width: this.state.width + growSize
       });
@@ -33,7 +33,7 @@ export default class Progress extends Component {
   stopAnimation = () => {
     clearInterval(this.updateInterval);
     this.updateInterval = false;
-    setTimeout(this.resetProgressSize, 300);
+    this.resetProgressSize();
   }
 
   updateWindowDimensions = () => {
@@ -46,7 +46,7 @@ export default class Progress extends Component {
   }
 
   componentDidUpdate() {
-    if (this.props.status === 'end') {
+    if (this.props.status === 'end' && this.updateInterval) {
       this.stopAnimation();
     } else if (this.props.status === 'start' && !this.updateInterval) {
       this.startAnimation();
