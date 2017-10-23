@@ -31,6 +31,7 @@ export default class App extends Component {
 
   searchGitHub = () => {
     this.setState({
+      'items': [],
       'progress': 'start'
     });
     axios.get(this.buildUrl())
@@ -111,14 +112,12 @@ export default class App extends Component {
         {
           this.state.error && <Error resourceName="repository list" />
         }
+        <RepositoryList
+          items={state.items}
+          loadMore={this.loadMore}
+        />
         {
-          state.progress !== 'start' ?
-            <RepositoryList
-              items={state.items}
-              loadMore={this.loadMore}
-            />
-            :
-            <Loader />
+          state.progress === 'start' && <Loader />
         }
         <Footer />
       </div>
