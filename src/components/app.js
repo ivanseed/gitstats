@@ -7,6 +7,7 @@ import RepositoryList from './repository-list';
 import Footer from './footer';
 import Title from './title';
 import Error from './error';
+import Loader from './loader';
 
 export default class App extends Component {
 
@@ -110,10 +111,15 @@ export default class App extends Component {
         {
           this.state.error && <Error resourceName="repository list" />
         }
-        <RepositoryList
-          items={state.items}
-          loadMore={this.loadMore}
-        />
+        {
+          state.progress !== 'start' ?
+            <RepositoryList
+              items={state.items}
+              loadMore={this.loadMore}
+            />
+            :
+            <Loader />
+        }
         <Footer />
       </div>
     );
