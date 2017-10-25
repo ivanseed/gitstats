@@ -375,24 +375,6 @@ body {
   transition: all 375ms ease-in-out;
 }
 
-.custom-selectbox{
-    position: relative;
-    display: inline-block;
-}
-
-.custom-selectbox:after{
-    content: " ";
-    height: 0;
-    width: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #444;
-    position: absolute;
-    right: 2.5px;
-    top: 47.2px;
-    transition: all 0.3s linear;
-}
-
 .error {
 	color: red;
 	font-size: 20px;
@@ -414,6 +396,40 @@ body {
 }
 #app .loader {
 	margin-top: 24px;
+}
+
+.custom-selectbox {
+	margin: 24px 0;
+}
+
+select.minimal {
+	color: #3d3d3d;
+	background-color: #efefef;
+	border: thin solid #efefef;
+	border-radius: 4px;
+	display: inline-block;
+	font: inherit;
+	line-height: 1.5em;
+	padding: 0.5em 3.5em 0.5em 1em;
+	margin: 0;
+	box-sizing: border-box;
+	appearance: none;
+	font-weight: bold;
+
+	background-image:
+		linear-gradient(45deg, transparent 50%, #3d3d3d 50%),
+		linear-gradient(135deg, #3d3d3d 50%, transparent 50%),
+		linear-gradient(to right, #ccc, #ccc);
+	background-position:
+		calc(100% - 20px) calc(1em + 2px),
+		calc(100% - 15px) calc(1em + 2px),
+		calc(100% - 2.5em) 0.5em;
+	background-size:
+		5px 5px,
+		5px 6px,
+		1px 1.5em;
+	background-repeat: no-repeat;
+	outline: none;
 }
 
 @keyframes spin {
