@@ -195,6 +195,7 @@ body {
 	pointer-events: none;
 	background-color: #efefef;
 	transition: opacity 0.3s;
+	border-radius: 0 5px 5px 0;
 }
 
 .search-bar:focus + .search-icon,
