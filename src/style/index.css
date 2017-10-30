@@ -494,6 +494,7 @@ max-height: 60px; */
     position: absolute;
     right: 10px;
     top: 50%;
+	pointer-events: none;
 	transform: rotate(45deg) translate(-50%, -50%);
     transition: all 0.3s linear;
 }
