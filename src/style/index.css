@@ -37,13 +37,6 @@ body {
 	text-align: left;
 	margin-top: 10px;
 }
-.language-dropdown,
-.load-more,
-.repository,
-.search-bar,
-.search-bar + .search-icon {
-	border: 1px solid #dedede;
-}
 
 .load-more {
 	display: block;
@@ -397,6 +390,15 @@ body {
 		margin-top: 15px;
 		width: 100%;
 	}
+}
+
+
+.language-dropdown,
+.load-more,
+.repository,
+.search-bar,
+.search-bar + .search-icon {
+	border: 1px solid #dedede;
 }
 
 .footer {
