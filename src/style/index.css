@@ -345,7 +345,7 @@ body {
 .search-order input {
 	margin: 0;
 	padding: 0;
-	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 }
 
@@ -359,7 +359,7 @@ body {
 	cursor: pointer;
 	border: none;
 	border-radius: 5px;
-	-webkit-appearance: none;
+	-moz-appearance: none;
 	background-color: #fafafa;
     box-shadow: 0 2px 6px -2px rgba(50,50,50,.1);
 }
