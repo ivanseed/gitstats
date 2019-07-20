@@ -7,6 +7,7 @@ import RepositoryList from './repository-list';
 import Footer from './footer';
 import Title from './title';
 import Error from './error';
+import Loader from './loader';
 
 export default class App extends Component {
 
@@ -30,6 +31,7 @@ export default class App extends Component {
 
   searchGitHub = () => {
     this.setState({
+      'items': [],
       'progress': 'start'
     });
     axios.get(this.buildUrl())
@@ -114,6 +116,9 @@ export default class App extends Component {
           items={state.items}
           loadMore={this.loadMore}
         />
+        {
+          state.progress === 'start' && <Loader />
+        }
         <Footer />
       </div>
     );
