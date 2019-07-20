@@ -33,12 +33,11 @@ const Repository =  ({ item }) => (
       </div>
       <div class="repository-meta-container">
         <div>
-          <div
-            className="repository-meta repository-language"
-            style={getLanguageDisplayStyle(item.language)}
-          >
-            <CodeIcon />
-            <span>{item.language}</span>
+          <div className="repository-language-item" style={getLanguageDisplayStyle(item.language)}>
+            <div className="repository-meta repository-language">
+              <CodeIcon />
+              <span>{item.language}</span>
+            </div>
           </div>
           <div className="repository-meta repository-time">
             <HistoryIcon />
