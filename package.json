@@ -28,7 +28,7 @@
     "preact-cli": "^1.4.1"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "date-fns": "^1.28.5",
     "preact": "^8.2.5",
     "preact-helmet": "^4.0.0-alpha-3",
